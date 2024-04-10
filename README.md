@@ -7,7 +7,7 @@ In this guide, we'll walk through the process of creating a contact list applica
 <br/>
 <div align="center">
 <kbd>
-<img src=",/img.png">
+<img src="../img.png">
 </kbd>
 </div>
 
