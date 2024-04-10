@@ -3,6 +3,15 @@
 In this guide, we'll walk through the process of creating a contact list application in React. This application will feature a dynamic search functionality that allows users to filter contacts by first name or last name. We'll be using Material UI components to build a sleek and responsive user interface.
 
 
+<div align="center">Welcome to Search List by Material UI. </div>
+<br/>
+<div align="center">
+<kbd>
+<img src="./img.png">
+</kbd>
+</div>
+
+
 ## Prerequisites
 
 - Basic understanding of React and JavaScript
