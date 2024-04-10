@@ -2,6 +2,7 @@
 
 In this guide, we'll walk through the process of creating a contact list application in React. This application will feature a dynamic search functionality that allows users to filter contacts by first name or last name. We'll be using Material UI components to build a sleek and responsive user interface.
 
+
 ## Prerequisites
 
 - Basic understanding of React and JavaScript
@@ -88,6 +89,28 @@ const filteredRows = data.filter((row) => {
     row.last_name.toLowerCase().includes(searchLowerCase)
   );
 });
+
+The purpose of this code snippet is to filter the data array to only include contacts that match what the user types into the search input. The matching criteria apply to both the first_name and last_name fields of each contact.
+
+Step-by-Step Explanation
+const filteredRows = data.filter((row) => {...});
+
+filteredRows is a new array that will contain only the items from the data array that satisfy the condition specified in the filter method.
+filter is an array method that creates a new array with all elements that pass the test implemented by the provided function.
+const searchLowerCase = search.toLowerCase();
+
+This line converts the user's search input to lowercase. It ensures that the search is case-insensitive. For instance, searching for "john" will also return "John" or "JOHN".
+The Return Condition:
+
+searchLowerCase === "" checks if the search input is empty. If it is, this condition is true, and no filtering is applied. All contacts are included because the user hasn't typed anything to filter by.
+row.first_name.toLowerCase().includes(searchLowerCase) checks if the lowercase version of the contact's first name includes the lowercase search string. For example, if a user types "jo", this condition will be true for a contact with the first name "John".
+row.last_name.toLowerCase().includes(searchLowerCase) does the same as the above but for the contact's last name. It checks if the lowercase version of the last name contains the lowercase search string.
+Logical OR (||):
+
+The || operator is used to combine the three conditions. If any of these conditions is true, the filter method will include the current row (contact) in the filteredRows array.
+This means a contact will be shown if the search input is empty (showing all contacts), or if either the first name or last name matches the search input.
+Outcome
+The result of this code snippet is a filtered list of contacts, filteredRows, where each contact's first name or last name (or both) contains the string that the user has entered in the search input, ignoring case differences. This filtered list is then used to display the contacts that match the search criteria, providing a dynamic search functionality within the React application.
 ```
 
 ### Building the UI
